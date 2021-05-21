@@ -1,0 +1,49 @@
+.todo_item {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  background: #333;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid wheat;
+  border-radius: 10px;
+}
+
+.todo_date {
+  border: 2px solid grey;
+  padding: 5px;
+  text-align: center;
+}
+.todo_date div:first-child {
+  font-size: 14px;
+}
+.todo_date div:nth-child(2) {
+  font-size: 18px;
+}
+.todo_date div:last-child {
+  font-size: 16px;
+}
+
+.todo_created {
+  background: green;
+}
+.todo_target {
+  background: red;
+}
+
+.todo_task {
+  font-size: 32px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.todo_status {
+  font-size: 24px;
+  text-align: center;
+  color: black;
+  background: white;
+  display: flex;
+  align-items: center;
+}

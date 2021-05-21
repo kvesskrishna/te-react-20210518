@@ -5,7 +5,7 @@ const Logo = () => {
 }
 
 const Header = () => {
-    const heading = 'My Header';
+    const heading = 'Todo List';
     return (
         <div className='header'>
             <h1>{heading}<Logo></Logo></h1>
