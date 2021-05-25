@@ -1,8 +1,11 @@
-import './TodoItem.css'
+import './TodoItem.css' // resource
 import TodoDate from './TodoDate'
 import TodoTask from './TodoTask'
 import TodoStatus from './TodoStatus'
+import logo from './../images/783px-Test-Logo.svg.png'
+
 const TodoItem = (props) => {
+    // console.log(TodoStatus)
     // const todoInfo = {
     //     created: new Date(2020, 7, 2),
     //     target: new Date(2021, 8, 12),
@@ -18,6 +21,7 @@ const TodoItem = (props) => {
     const todoInfo = props.info;
     return (
         <div className="todo_item">
+            {/* <img src={logo} /> */}
             <TodoDate dateType="todo_created" date={todoInfo.created} ></TodoDate>
             <TodoTask task={todoInfo.task}></TodoTask>
             <TodoDate dateType="todo_target" date={todoInfo.target} ></TodoDate>

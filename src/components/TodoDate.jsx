@@ -1,4 +1,8 @@
+import './../images/783px-Test-Logo.svg.png'
+import './TodoDate.css'
+
 const TodoDate = (props) => {
+
     const date = props.date;
     const year = date.toLocaleDateString('en-US', { year: 'numeric' })
     const day = date.toLocaleDateString('en-US', { day: '2-digit' })
