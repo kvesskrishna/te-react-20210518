@@ -4,6 +4,7 @@ import { Header2 as Heading2 } from './components/Header'
 import Heading from './components/Header';
 import TodoItem from './components/TodoItem';
 import tasks from './data/tasks';
+import BasicCalc from './components/BasicCalc'
 const doubleNum = x => 2 * x;
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div>
       <Heading></Heading>
+      <BasicCalc></BasicCalc>
       {/* < h2>My First {technology} Program</h2>
       <p>This is my para</p>
       <p>{today.getFullYear()} Expression </p>
