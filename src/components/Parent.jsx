@@ -6,9 +6,12 @@ class Parent extends React.Component {
         super(props);
         this.state = { a: 0 }
     }
-    setA() {
+    increment() {
         this.setState({ a: this.state.a + 1 });//async
         console.log(this.state.a)
+    }
+    decrement() {
+        this.setState({ a: this.state.a - 1 });//async
     }
     render() {
         return (
@@ -16,8 +19,8 @@ class Parent extends React.Component {
                 <h3>Parent</h3>
                 {this.state.a}
                 <br />
-                <button onClick={() => this.setA()}>set a</button>
-                <Child a={this.state.a}></Child>
+                <button onClick={() => this.increment()}>increment</button>
+                <Child decrementHandler={() => this.decrement()} a={this.state.a}></Child>
             </div>
         )
     }
