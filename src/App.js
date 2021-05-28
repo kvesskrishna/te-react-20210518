@@ -5,6 +5,7 @@ import Heading from './components/Header';
 import TodoItem from './components/TodoItem';
 import tasks from './data/tasks';
 import BasicCalc from './components/BasicCalc'
+import Parent from './components/Parent'
 const doubleNum = x => 2 * x;
 
 const App = () => {
@@ -21,7 +22,8 @@ const App = () => {
   return (
     <div>
       <Heading></Heading>
-      <BasicCalc></BasicCalc>
+      <Parent></Parent>
+      {/* <BasicCalc></BasicCalc> */}
       {/* < h2>My First {technology} Program</h2>
       <p>This is my para</p>
       <p>{today.getFullYear()} Expression </p>
@@ -33,7 +35,7 @@ const App = () => {
       <TodoItem info={todoInfo[2]}></TodoItem>
       <TodoItem info={todoInfo[3]}></TodoItem> */}
       {
-        todoInfo.map((todo) => <TodoItem key={todo.task} info={todo}></TodoItem>)
+        // todoInfo.map((todo) => <TodoItem key={todo.task} info={todo}></TodoItem>)
       }
 
     </div>
