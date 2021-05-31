@@ -6,6 +6,8 @@ import TodoItem from './components/TodoItem';
 import tasks from './data/tasks';
 import BasicCalc from './components/BasicCalc'
 import Parent from './components/Parent'
+import Child2 from './components/Child2'
+import ChildrenDemo from './components/ChildrenDemo'
 const doubleNum = x => 2 * x;
 
 const App = () => {
@@ -22,7 +24,10 @@ const App = () => {
   return (
     <div>
       <Heading></Heading>
-      <Parent></Parent>
+      <ChildrenDemo></ChildrenDemo>
+      {/* <Parent>
+        <Child2 />
+      </Parent> */}
       {/* <BasicCalc></BasicCalc> */}
       {/* < h2>My First {technology} Program</h2>
       <p>This is my para</p>
