@@ -8,6 +8,7 @@ import BasicCalc from './components/BasicCalc'
 import Parent from './components/Parent'
 import Child2 from './components/Child2'
 import ChildrenDemo from './components/ChildrenDemo'
+import LifeCycleMethods from './components/LifeCycleMethods'
 const doubleNum = x => 2 * x;
 
 const App = () => {
@@ -24,7 +25,8 @@ const App = () => {
   return (
     <div>
       <Heading></Heading>
-      <ChildrenDemo></ChildrenDemo>
+      <LifeCycleMethods data='test data'></LifeCycleMethods>
+      {/* <ChildrenDemo></ChildrenDemo> */}
       {/* <Parent>
         <Child2 />
       </Parent> */}
