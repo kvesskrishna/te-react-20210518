@@ -1,7 +1,7 @@
 import logo from './../images/783px-Test-Logo.svg.png'
 import './Header.css'
 const Logo = () => {
-    return (<img style={{ height: '40px' }} src={logo} />)
+    return (<img alt="img" style={{ height: '40px' }} src={logo} />)
 }
 
 const Header = () => {
