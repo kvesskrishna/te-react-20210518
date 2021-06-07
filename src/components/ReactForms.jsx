@@ -16,6 +16,7 @@ export default class ReactForms extends Component {
     setFormData = (e) => {
         let value = e.target.value;
         let name = e.target.name;
+
         this.setState({ [name]: value })
     }
     render() {

@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function componentName({ error, componentStack, resetErrorBoundary }) {
+export default function componentName({ errorMessage }) {
+    console.log('err msg: ', errorMessage);
     return (
         <>
-            <h1>Error message: {error.message}</h1>
+            <h1>Error message: {errorMessage}</h1>
+            {alert('in fallback ui...')}
         </>
     );
 }
