@@ -9,7 +9,7 @@ import Heading from './components/Header';
 // import Child2 from './components/Child2'
 // import ChildrenDemo from './components/ChildrenDemo'
 import LifeCycleMethods from './components/LifeCycleMethods';
-import ErrorBoundary from './components/ErrorBoundary'
+import ErrorBoundary, { Counter } from './components/ErrorBoundary'
 import ReactForms, { ReactFormsWithRef } from './components/ReactForms'
 // const doubleNum = x => 2 * x;
 
@@ -63,6 +63,7 @@ import ReactForms, { ReactFormsWithRef } from './components/ReactForms'
 import React, { Component } from 'react'
 import ReduxPractice from './components/ReduxPractice'
 import ErrorMessage from './components/ErrorMessage'
+import LivingBeings from './components/contextDemo/LivingBeings';
 export default class App extends Component {
   state = {
     lcmstyle: { display: 'block' }
@@ -75,9 +76,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Heading></Heading>
-        <ReactForms></ReactForms>
-        <ReactFormsWithRef></ReactFormsWithRef>
+        <LivingBeings/>
+        {/* <ErrorBoundary>
+
+          <Counter></Counter>
+        </ErrorBoundary> */}
+        {/* <Heading></Heading> */}
+        {/* <ReactForms></ReactForms>
+        <ReactFormsWithRef></ReactFormsWithRef> */}
         {/* <ReduxPractice />
         <button onClick={this.removeLCM}>remove LifeCycleMethods component</button>
 
