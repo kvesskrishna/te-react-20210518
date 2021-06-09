@@ -1,16 +1,16 @@
-import './App.css';
+import "./App.css";
 // import testImage from './images/783px-Test-Logo.svg.png';
 // import { Header2 as Heading2 } from './components/Header'
-import Heading from './components/Header';
+import Heading from "./components/Header";
 // import TodoItem from './components/TodoItem';
 // import tasks from './data/tasks';
 // import BasicCalc from './components/BasicCalc'
 // import Parent from './components/Parent'
 // import Child2 from './components/Child2'
 // import ChildrenDemo from './components/ChildrenDemo'
-import LifeCycleMethods from './components/LifeCycleMethods';
-import ErrorBoundary, { Counter } from './components/ErrorBoundary'
-import ReactForms, { ReactFormsWithRef } from './components/ReactForms'
+import LifeCycleMethods from "./components/LifeCycleMethods";
+import ErrorBoundary, { Counter } from "./components/ErrorBoundary";
+import ReactForms, { ReactFormsWithRef } from "./components/ReactForms";
 // const doubleNum = x => 2 * x;
 
 // const App = () => {
@@ -59,24 +59,52 @@ import ReactForms, { ReactFormsWithRef } from './components/ReactForms'
 
 // export default App;
 
+import React, { Component } from "react";
+import ReduxPractice from "./components/ReduxPractice";
+import ErrorMessage from "./components/ErrorMessage";
+import LivingBeings from "./components/contextDemo/LivingBeings";
+import Shows from "./components/contextDemo/ott/Shows";
+import shows from "./components/contextDemo/ott/showsdata";
+import ShowsContext from "./components/contextDemo/ott/ShowsContext";
+import Login from "./components/contextDemo/ott/Login";
 
-import React, { Component } from 'react'
-import ReduxPractice from './components/ReduxPractice'
-import ErrorMessage from './components/ErrorMessage'
-import LivingBeings from './components/contextDemo/LivingBeings';
 export default class App extends Component {
-  state = {
-    lcmstyle: { display: 'block' }
-  }
+  // state = {
+  //   lcmstyle: { display: "block" },
+  // };
+  state = { shows: shows, loggedIn: false };
+  alerthi = () => {
+    alert("hi");
+  };
   removeLCM = () => {
-    let newstyle = { display: 'none' }
-    this.setState({ lcmstyle: { newstyle }, lcmstyle1: '0' })
-    console.log(this.state1)
-  }
+    let newstyle = { display: "none" };
+    this.setState({ lcmstyle: { newstyle }, lcmstyle1: "0" });
+    console.log(this.state1);
+  };
+  loginHandler = (action, uname = "", pwd = "") => {
+    console.log(action, uname, pwd);
+    if (action == "login") {
+      if (uname == "admin" && pwd == "admin") {
+        this.setState({ loggedIn: true });
+      }
+    } else this.setState({ loggedIn: false });
+  };
   render() {
     return (
-      <div>
-        <LivingBeings/>
+      <div style={{ margin: "20px" }}>
+        <ShowsContext.Provider
+          value={{
+            shows: this.state.shows,
+            loggedIn: this.state.loggedIn,
+            loginHandler: this.loginHandler,
+            greet: this.alerthi,
+          }}
+        >
+          <Login />
+          <Shows />
+        </ShowsContext.Provider>
+
+        {/* <LivingBeings/> */}
         {/* <ErrorBoundary>
 
           <Counter></Counter>
@@ -95,6 +123,6 @@ export default class App extends Component {
           </ErrorBoundary>
         </div> */}
       </div>
-    )
+    );
   }
 }
