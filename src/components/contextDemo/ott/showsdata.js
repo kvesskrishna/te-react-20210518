@@ -37,7 +37,7 @@ const shows = [
     year: 2000,
     thumbnail:
       "https://www.iconpacks.net/icons/1/free-movie-icon-850-thumb.png",
-    free: true,
+    free: false,
   },
 ];
 

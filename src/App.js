@@ -67,6 +67,9 @@ import Shows from "./components/contextDemo/ott/Shows";
 import shows from "./components/contextDemo/ott/showsdata";
 import ShowsContext from "./components/contextDemo/ott/ShowsContext";
 import Login from "./components/contextDemo/ott/Login";
+import Parent from "./components/hooks/Parent";
+import Users from "./components/hooks/Users";
+import EffectDemo from "./components/hooks/EffectDemo";
 
 export default class App extends Component {
   // state = {
@@ -92,7 +95,10 @@ export default class App extends Component {
   render() {
     return (
       <div style={{ margin: "20px" }}>
-        <ShowsContext.Provider
+        {/* <EffectDemo /> */}
+        <Users />
+        {/* <Parent /> */}
+        {/* <ShowsContext.Provider
           value={{
             shows: this.state.shows,
             loggedIn: this.state.loggedIn,
@@ -102,7 +108,7 @@ export default class App extends Component {
         >
           <Login />
           <Shows />
-        </ShowsContext.Provider>
+        </ShowsContext.Provider> */}
 
         {/* <LivingBeings/> */}
         {/* <ErrorBoundary>
