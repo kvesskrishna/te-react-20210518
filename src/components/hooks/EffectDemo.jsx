@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 const EffectDemo = () => {
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
@@ -45,6 +45,9 @@ const EffectDemo = () => {
               <td>{user.name}</td>
               <td>{user.phone}</td>
               <td>{user.email}</td>
+              <td>
+                <Link to={`/user/${user.id}`}>Info</Link>
+              </td>
             </tr>
           ))}
         </tbody>

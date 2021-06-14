@@ -6,7 +6,7 @@ import Heading from "./components/Header";
 // import tasks from './data/tasks';
 // import BasicCalc from './components/BasicCalc'
 // import Parent from './components/Parent'
-// import Child2 from './components/Child2'
+import Child2 from "./components/Child2";
 // import ChildrenDemo from './components/ChildrenDemo'
 import LifeCycleMethods from "./components/LifeCycleMethods";
 import ErrorBoundary, { Counter } from "./components/ErrorBoundary";
@@ -70,7 +70,8 @@ import Login from "./components/contextDemo/ott/Login";
 import Parent from "./components/hooks/Parent";
 import Users from "./components/hooks/Users";
 import EffectDemo from "./components/hooks/EffectDemo";
-
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import User from "./User";
 export default class App extends Component {
   // state = {
   //   lcmstyle: { display: "block" },
@@ -95,10 +96,11 @@ export default class App extends Component {
   render() {
     return (
       <div style={{ margin: "20px" }}>
-        {/* <EffectDemo /> */}
-        <Users />
+        {/* <Users />
+        <EffectDemo /> */}
+        {/* <Login /> */}
         {/* <Parent /> */}
-        {/* <ShowsContext.Provider
+        <ShowsContext.Provider
           value={{
             shows: this.state.shows,
             loggedIn: this.state.loggedIn,
@@ -106,16 +108,22 @@ export default class App extends Component {
             greet: this.alerthi,
           }}
         >
-          <Login />
-          <Shows />
-        </ShowsContext.Provider> */}
-
+          <Router>
+            <Heading></Heading>
+            <Route exact path="/" component={Login} />
+            <Route path="/users" component={Users} />
+            <Route path="/child" component={Child2} />
+            <Route path="/shows" component={Shows} />
+            <Route path="/user/:id" component={User} />
+          </Router>
+        </ShowsContext.Provider>
+        {/* */}
         {/* <LivingBeings/> */}
         {/* <ErrorBoundary>
+          <Shows />
 
           <Counter></Counter>
         </ErrorBoundary> */}
-        {/* <Heading></Heading> */}
         {/* <ReactForms></ReactForms>
         <ReactFormsWithRef></ReactFormsWithRef> */}
         {/* <ReduxPractice />
