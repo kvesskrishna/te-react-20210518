@@ -70,8 +70,12 @@ import Login from "./components/contextDemo/ott/Login";
 import Parent from "./components/hooks/Parent";
 import Users from "./components/hooks/Users";
 import EffectDemo from "./components/hooks/EffectDemo";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import User from "./User";
+
+import Admin from "./components/ConditionalRouting/Admin";
+import Customer from "./components/ConditionalRouting/Customer";
+import ConditionalRouting from "./components/ConditionalRouting/ConditionalRouting";
 export default class App extends Component {
   // state = {
   //   lcmstyle: { display: "block" },
@@ -110,11 +114,20 @@ export default class App extends Component {
         >
           <Router>
             <Heading></Heading>
-            <Route exact path="/" component={Login} />
-            <Route path="/users" component={Users} />
-            <Route path="/child" component={Child2} />
-            <Route path="/shows" component={Shows} />
-            <Route path="/user/:id" component={User} />
+            <Switch>
+              <Route exact path="/">
+                <Login />
+              </Route>
+              <Route path="/users">
+                <Users />
+              </Route>
+              <Route path="/child" component={Child2} />
+              <Route path="/shows" component={Shows} />
+              <Route path="/user/:id" component={User} />
+              <Route path="/admin" component={Admin} />
+              <Route path="/customer" component={Customer} />
+              <Route path="/condrouting" component={ConditionalRouting} />
+            </Switch>
           </Router>
         </ShowsContext.Provider>
         {/* */}

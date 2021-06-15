@@ -1,6 +1,6 @@
 import logo from "./../images/783px-Test-Logo.svg.png";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Logo = () => {
   return <img alt="img" style={{ height: "40px" }} src={logo} />;
@@ -12,16 +12,22 @@ const Header = () => {
     <div className="header">
       {heading}
       <Logo></Logo>
-      <Link style={{ color: "white" }} to="/users">
+      <NavLink activeClassName="active" style={{ color: "white" }} to="/users">
         Users
-      </Link>
+      </NavLink>
       &nbsp;{" "}
-      <Link style={{ color: "white" }} to="/shows">
+      <NavLink activeClassName="active" style={{ color: "white" }} to="/shows">
         Shows
-      </Link>
+      </NavLink>
       &nbsp;
-      <Link to="/child">Child</Link>&nbsp;
-      <Link to="/">Login</Link>&nbsp;
+      <NavLink activeClassName="active" to="/child">
+        Child
+      </NavLink>
+      &nbsp;
+      <NavLink exact activeClassName="active" to="/">
+        Login
+      </NavLink>
+      &nbsp;
     </div>
   );
 };

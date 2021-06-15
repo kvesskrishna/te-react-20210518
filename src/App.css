@@ -11,3 +11,7 @@ div {
 .result {
   font-size: 26px;
 }
+.active {
+  font-weight: bold;
+  color: yellow !important;
+}
